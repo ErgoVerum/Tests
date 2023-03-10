@@ -1,0 +1,24 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Part2 : MonoBehaviour
+{
+	private GameObject OtherObject;
+	private RigidBody RBCollider;
+	private string ObjName;
+	
+	private void OnCollisionEnter(Collision other)
+	{
+        Debug.Log("It Collided!");
+		RBCollider = other.GetComponent<RigidBody>();	
+		OtherObject = other.gameObject; // This is here just to make the function more efficient.
+	}
+	
+	private void SaveName()
+	{		
+		ObjName = OtherObject.name;
+		Debug.Log("The Object's name is " + ObjName);
+		
+	}
+}
