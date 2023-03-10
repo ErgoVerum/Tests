@@ -1,0 +1,45 @@
+using System;
+
+namespace CScript
+{
+      class ParentMain
+    {
+    	public string Nome = "Ramirez";
+    }
+    
+    class ChildHeir : ParentMain
+    {
+    	    public void SetName()
+        {
+        	Console.WriteLine("My name is " + Nome);
+        }
+    }
+      class Program
+  {
+ 	 static void Main(string[] args) 
+     {
+     	 int SwitchValue = 8;
+   		 ChildHeir kiddo = new ChildHeir();
+    	 kiddo.SetName();
+         float PotofGreedPlays = 0;
+         while(PotofGreedPlays < 10)
+         {
+         	Console.WriteLine("I start my turn by playing Pot of Greed, which allows me to draw two additional cards, one of which is Pot of Greed, which allows me to draw two additional cards, one of which");
+            PotofGreedPlays++;
+         }
+         
+         switch (SwitchValue)  
+         {
+         	case 7:
+            Console.WriteLine("Value is 7");
+            break;
+         	case 8:
+            Console.WriteLine("Value is 8");
+            break;
+            default:
+            Console.WriteLine("Door Stuck");
+            break;
+         }
+    }
+  }
+}
