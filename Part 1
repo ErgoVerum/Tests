@@ -1,0 +1,37 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MyClass : MonoBehaviour
+{
+    public 
+    public bool IsPaused = false;
+
+    private RigidBody2D rb;
+    private LeftRight LR;
+    private Animator a;
+	private bool hide;
+
+    void Start()
+    {
+	a = = GetComponent<Animator>();
+	rb = GetComponent<RigidBody2D>();
+	LR = GetComponent<LeftRight>();
+	a.SetBool ("Hide", hide);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+     if(collision.name == “player” && !IsPaused)
+      {
+	rb.velocity = Vector2.zero;
+        hide = true;
+      }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+            LR.RangeOfMovement = 9.5f;
+	    hide = false;
+//I couldn't find anything related to a "leftright" component on the Unity documentation, so i'll assume is a custom script, in which case, i left as it was.      
+    }
+}
